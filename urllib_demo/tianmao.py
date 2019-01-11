@@ -13,12 +13,12 @@ def get_html(url):
     return None
 
 
-# <a.*?class="imgbox".*?><img.*?src="(.*?)".*?></a>
+# <a.*?class="imgbox".*?><images.*?src="(.*?)".*?></a>
 
 def parser_html(html):
     pattern = re.compile('<dd>'
                          '<div class="newsitem">.*?'
-                         '<a.*?"imgbox".*?<img src="(.*?)".*?></a>'
+                         '<a.*?"imgbox".*?<images src="(.*?)".*?></a>'
                          '<h3>.?<a.*?>(.*?)</a></h3>'
                          '<p.*?><a.*?>(.*?)</a></p>'
                          '.*?'

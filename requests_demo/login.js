@@ -556,7 +556,7 @@
                 cache: !1,
                 url: "/api/get_image_vcode?" + (new Date).getTime(),
                 success: function (t) {
-                    t && (e.vcodeImage.data("vcodeid", t.codeId), e.vcodeImage.html('<img width="120" height="60" alt="点击更新新图" src="' + t.url + '" style="cursor:pointer" class="v_m mr6" />'))
+                    t && (e.vcodeImage.data("vcodeid", t.codeId), e.vcodeImage.html('<images width="120" height="60" alt="点击更新新图" src="' + t.url + '" style="cursor:pointer" class="v_m mr6" />'))
                 }
             })
         }, e.prototype.validVCode = function (e, t) {

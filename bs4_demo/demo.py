@@ -1,5 +1,6 @@
 import re
 
+import requests
 from bs4 import BeautifulSoup, Tag
 
 html = """
@@ -20,7 +21,7 @@ html = """
         </ul>
         <div><!--注释部分的内容--></div>
         <a href="http://www.baidu.com">python</a>
-        <img src='http://5b0988e595225.cdn.sohucs.com/images/20180421/01bcab8b40584e0997eca26ede276268.jpeg'>
+        <images src='http://5b0988e595225.cdn.sohucs.com/images/20180421/01bcab8b40584e0997eca26ede276268.jpeg'>
     </body>
 </html>
 """
@@ -218,10 +219,30 @@ def get_next_element():
     tag_p = soup.p.next_element
     print(type(tag_p))
     print(tag_p)
-
+    # p 标签的下一个标签对象是一个注释
     tag_p = soup.ul.next_element
     print(type(tag_p))
     print(tag_p)
+
+
+def get_next_element():
+    soup = BeautifulSoup(html, features='lxml')
+    tag_a = soup.li.next_element
+    # li的下一个标签对象
+    print(type(tag_a))
+    print(tag_a)
+    # p 标签的下一个标签对象是字符串
+    tag_p = soup.p.next_element
+    print(type(tag_p))
+    print(tag_p)
+    # p 标签的下一个标签对象是一个注释
+    tag_p = soup.ul.next_element
+    print(type(tag_p))
+    print(tag_p)
+
+
+
+
 
 if __name__ == '__main__':
     # parse_html_tag()
